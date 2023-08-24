@@ -12,6 +12,7 @@ class LinkedList:
         self.length = 1
 
     def print_list(self):
+        """Print all the nodes value"""
         temp = self.head
         while temp is not None:
             print(temp.value)
