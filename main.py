@@ -134,6 +134,17 @@ class LinkedList:
             temp.next = before
             before = temp
             temp = after
+            
+    def find_middle_node(self):
+        # Initialize two pointers to the head of the list
+        slow = self.head
+        fast = self.head
+        
+        # Traverse the list with the fast pointer moving twich speed as the fast as the slow pointer
+        while fast is not None and fast.next is not None:
+            slow = slow.next
+            fast = fast.next.next
+        return slow.value
 
 
 my_linked_list = LinkedList(1)
@@ -149,4 +160,5 @@ my_linked_list.append(4)
 # my_linked_list.remove(0)
 # my_linked_list.reverse()
 # print(my_linked_list.get(0))
-my_linked_list.print_list()
+# print(my_linked_list.find_middle_node())
+# my_linked_list.print_list()
